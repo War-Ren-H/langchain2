@@ -1,0 +1,25 @@
+<html>
+
+    <body>
+
+        <form action='/answer' method="POST">
+
+            Query: <input type='text' name='query'><br>
+
+            Answer: <br>
+            <ul>
+            {% for i, d in docs %}
+            <li> { d.metadata['law']}  </li>
+            <li> Page: { d.metadata['page']}  </li>
+            <li> { d.page_content}  </li>
+            {% endfor %}
+            </ul>
+        
+
+            <input type='submit' value='answer'>
+
+        </form>
+
+    </body>
+
+</html>
